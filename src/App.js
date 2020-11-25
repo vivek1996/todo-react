@@ -1,5 +1,5 @@
 import React from 'react';
-import { Counter } from './features/todo/Counter';
+import { Counter } from './features/todo/todo';
 import './App.css';
 
 function App() {
