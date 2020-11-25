@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectTodos, clearCompleted } from './todoSlice';
+import { selectTodos, selectFilter, clearCompleted } from './todoSlice';
 import AddTodo from '../../containers/AddTodo';
 import TodoList from '../../containers/Todolist';
 import Filters from '../../components/Filters';
@@ -8,9 +8,19 @@ import './styles.scss';
 
 const Container = () => {
   const todos = useSelector(selectTodos);
+  const filterSelected = useSelector(selectFilter);
   const dispatch = useDispatch();
 
+  const filteredTodos =
+    filterSelected === 'all'
+      ? todos
+      : filterSelected === 'active'
+      ? todos.filter((todo) => !todo.completed)
+      : todos.filter((todo) => todo.completed);
+
   const remainingItems = todos.filter((todo) => !todo.completed).length;
+
+  console.log({ filterSelected, remainingItems });
 
   return (
     <div className="container">
@@ -26,7 +36,7 @@ const Container = () => {
       </div>
       <div className="card">
         <AddTodo />
-        <TodoList />
+        <TodoList todos={filteredTodos} />
       </div>
     </div>
   );

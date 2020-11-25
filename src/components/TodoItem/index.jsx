@@ -11,6 +11,7 @@ const TodoItem = ({ item }) => {
       <div className="round">
         <input
           type="checkbox"
+          checked={item.completed}
           id={`checkbox_${item.id}`}
           onChange={() => dispatch(toggleTodo({ id: item.id }))}
         />
