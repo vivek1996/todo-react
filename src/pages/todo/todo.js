@@ -11,6 +11,7 @@ const Container = () => {
   const filterSelected = useSelector(selectFilter);
   const dispatch = useDispatch();
 
+  // Get only todos based on the filter selected .
   const filteredTodos =
     filterSelected === 'all'
       ? todos
@@ -25,6 +26,7 @@ const Container = () => {
   return (
     <div className="container">
       <h1 className="title">My List</h1>
+      <hr />
       <div className="filters-container">
         <p>{remainingItems} Items Remaining</p>
         <div className="filters">
