@@ -17,7 +17,12 @@ const TodoItem = ({ item }) => {
         <label for={`checkbox_${item.id}`}></label>
       </div>
       <p className={item.completed ? 'completed' : ''}>{item.text}</p>
-      <button onClick={() => dispatch(removeTodo({ id: item.id }))}>-</button>
+      <button
+        className="button"
+        onClick={() => dispatch(removeTodo({ id: item.id }))}
+      >
+        -
+      </button>
     </li>
   );
 };

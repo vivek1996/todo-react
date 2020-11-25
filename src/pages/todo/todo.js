@@ -9,9 +9,16 @@ const Container = () => {
   const todos = useSelector(selectTodos);
   const dispatch = useDispatch();
 
+  const remainingItems = todos.filter((todo) => !todo.completed).length;
+
   return (
     <div className="container">
       <h1 className="title">My List</h1>
+      <div className="filters-container">
+        <p>{remainingItems} Items Remaining</p>
+        <div></div>
+        <button>Clear Completed</button>
+      </div>
       <div className="card">
         <AddTodo />
         <TodoList />
