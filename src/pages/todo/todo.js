@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeTodo, selectTodos } from './todoSlice';
+import { selectTodos, clearCompleted } from './todoSlice';
 import AddTodo from '../../containers/AddTodo';
 import TodoList from '../../containers/Todolist';
+import Filters from '../../components/Filters';
 import './styles.scss';
 
 const Container = () => {
@@ -16,8 +17,12 @@ const Container = () => {
       <h1 className="title">My List</h1>
       <div className="filters-container">
         <p>{remainingItems} Items Remaining</p>
-        <div></div>
-        <button>Clear Completed</button>
+        <div className="filters">
+          <Filters />
+        </div>
+        <button onClick={() => dispatch(clearCompleted())}>
+          Clear Completed
+        </button>
       </div>
       <div className="card">
         <AddTodo />

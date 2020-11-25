@@ -26,7 +26,7 @@ const AddTodo = () => {
             value={value}
             onChange={handleInputChange}
             placeholder="What need to be done ?"
-            autofocus
+            autoFocus
           />
           <button type="submit">+</button>
         </div>

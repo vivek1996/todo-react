@@ -11,7 +11,7 @@ const TodoList = () => {
       {todos && todos.length ? (
         todos.map((todo) => <TodoItem key={todo.id} item={todo} />)
       ) : (
-        <p>Added items will be shown here!</p>
+        <p>No Items!</p>
       )}
     </ul>
   );

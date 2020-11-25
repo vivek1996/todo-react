@@ -26,14 +26,19 @@ export const todoSlice = createSlice({
     removeTodo: (state, action) => {
       state.list = state.list.filter((todo) => todo.id !== action.payload.id);
     },
+    clearCompleted: (state) => {
+      state.list = state.list.filter((todo) => !todo.completed);
+    },
   },
 });
 
-export const { addTodo, toggleTodo, removeTodo } = todoSlice.actions;
+export const {
+  addTodo,
+  toggleTodo,
+  removeTodo,
+  clearCompleted,
+} = todoSlice.actions;
 
-// The function below is called a selector and allows us to select a value from
-// the state. Selectors can also be defined inline where they're used instead of
-// in the slice file. For example: `useSelector((state) => state.counter.value)`
 export const selectTodos = (state) => state.todos.list;
 
 export default todoSlice.reducer;

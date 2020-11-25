@@ -8,13 +8,13 @@ const TodoItem = ({ item }) => {
   console.log(item);
   return (
     <li className="list-item">
-      <div class="round">
+      <div className="round">
         <input
           type="checkbox"
           id={`checkbox_${item.id}`}
           onChange={() => dispatch(toggleTodo({ id: item.id }))}
         />
-        <label for={`checkbox_${item.id}`}></label>
+        <label htmlFor={`checkbox_${item.id}`}></label>
       </div>
       <p className={item.completed ? 'completed' : ''}>{item.text}</p>
       <button
