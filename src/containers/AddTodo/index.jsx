@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import Input from '../../components/Input';
-import { addTodo } from '../../features/todo/todoSlice';
+import { addTodo } from '../../pages/todo/todoSlice';
 
 const AddTodo = () => {
   const [value, setValue] = useState('');
