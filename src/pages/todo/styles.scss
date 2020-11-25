@@ -1,0 +1,49 @@
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.card {
+  background: #fff;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-top: 0;
+  text-align: center;
+}
+
+form.form-container {
+  padding: 30px;
+  padding-top: 0;
+}
+
+.input-container {
+  display: flex;
+  input {
+    flex: 1;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid;
+  }
+}

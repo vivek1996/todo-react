@@ -22,8 +22,13 @@ const AddTodo = () => {
     <>
       <form onSubmit={formSubmit} className="form-container">
         <div className="input-container">
-          <Input value={value} onChange={handleInputChange} />
-          <button type="submit">Add Todo</button>
+          <Input
+            value={value}
+            onChange={handleInputChange}
+            placeholder="What need to be done ?"
+            autofocus
+          />
+          <button type="submit">+</button>
         </div>
       </form>
     </>

@@ -1,11 +1,18 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeTodo, selectTodos } from './todoSlice';
+import { removeTodo, selectTodos } from '../../pages/todo/todoSlice';
+import TodoItem from '../../components/TodoItem';
 
 const TodoList = () => {
   const todos = useSelector(selectTodos);
   return (
-    <ul>{todos && todos.map((todo) => <li key={todo.id}>{todo.text}</li>)}</ul>
+    <ul className="list-container">
+      {todos && todos.length ? (
+        todos.map((todo) => <TodoItem key={todo.id} item={todo} />)
+      ) : (
+        <p>Added items will be shown here!</p>
+      )}
+    </ul>
   );
 };
 export default TodoList;
