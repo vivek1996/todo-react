@@ -1,11 +1,12 @@
 import React from 'react';
 import { toggleTodo, removeTodo } from '../../pages/todo/todoSlice';
 import { useDispatch } from 'react-redux';
+import DeleteIcon from '../../assets/delete.svg';
 import './styles.scss';
 
 const TodoItem = ({ item }) => {
   const dispatch = useDispatch();
-  console.log(item);
+  // console.log(item);
   return (
     <li className="list-item">
       <div className="round">
@@ -22,7 +23,7 @@ const TodoItem = ({ item }) => {
         className="button"
         onClick={() => dispatch(removeTodo({ id: item.id }))}
       >
-        -
+        <img alt="delete" src={DeleteIcon} />
       </button>
     </li>
   );

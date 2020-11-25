@@ -20,7 +20,7 @@ const Container = () => {
 
   const remainingItems = todos.filter((todo) => !todo.completed).length;
 
-  console.log({ filterSelected, remainingItems });
+  // console.log({ filterSelected, remainingItems });
 
   return (
     <div className="container">

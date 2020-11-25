@@ -21,6 +21,15 @@
   .button {
     visibility: hidden;
     cursor: pointer;
+    width: 44px;
+    outline: none;
+    border: none;
+    background: white;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
   &:hover .button,
   .button:hover {

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import Input from '../../components/Input';
 import { addTodo } from '../../pages/todo/todoSlice';
+import AddIcon from '../../assets/plus.svg';
 
 const AddTodo = () => {
   const [value, setValue] = useState('');
@@ -28,7 +29,9 @@ const AddTodo = () => {
             placeholder="What need to be done ?"
             autoFocus
           />
-          <button type="submit">+</button>
+          <button type="submit">
+            <img alt="Add" src={AddIcon} />
+          </button>
         </div>
       </form>
     </>
